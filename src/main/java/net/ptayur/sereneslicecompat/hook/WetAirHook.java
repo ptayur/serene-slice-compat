@@ -1,4 +1,4 @@
-package net.ptayur.sereneslicecompat.util;
+package net.ptayur.sereneslicecompat.hook;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
@@ -6,7 +6,7 @@ import net.ptayur.sereneslicecompat.SereneSliceCompat;
 
 import java.lang.reflect.Method;
 
-public class SliceAndDiceCompat {
+public class WetAirHook {
     private static Method wetAirCheck;
     private static boolean available;
 
@@ -38,15 +38,11 @@ public class SliceAndDiceCompat {
     }
 
     public static boolean isWetAir(Level level, BlockPos pos) {
-        init();
         if (!available) return false;
-        if (level.isClientSide) return false;
 
         try {
-            SereneSliceCompat.LOGGER.error("WetAir.check invocation try");
             return (boolean) wetAirCheck.invoke(null, level, pos);
         } catch (Throwable t) {
-            SereneSliceCompat.LOGGER.error("WetAir.check invocation failed", t);
             return false;
         }
     }
