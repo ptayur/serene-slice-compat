@@ -2,7 +2,7 @@ package net.ptayur.sereneslicecompat.mixin;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
-import net.ptayur.sereneslicecompat.hook.WetAirHook;
+import com.possible_triangle.sliceanddice.block.sprinkler.WetAir;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -13,7 +13,7 @@ public abstract class SeasonsHookMixin {
 
     @Inject(method = "isRainingAtHook", at = @At("RETURN"), cancellable = true, remap = false)
     private static void isRainingAtHook(Level level, BlockPos pos, CallbackInfoReturnable<Boolean> callback) {
-        if (!callback.getReturnValue() && WetAirHook.isWetAir(level, pos)) {
+        if (!callback.getReturnValue() && WetAir.check(level, pos)) {
             callback.setReturnValue(true);
         }
     }

@@ -7,26 +7,25 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+import java.util.Random;
+
 @OnlyIn(Dist.CLIENT)
 public class WetAirSound {
 
-    private static long lastPlayTick = 0;
+    private static final Random random = new Random();
 
     public static void tryPlayWetAirSound(ClientLevel level, BlockPos pos) {
-        long gameTime = level.getGameTime();
-
-        if (gameTime - lastPlayTick < 20) return;
-
-        lastPlayTick = gameTime;
+        float pitch = 0.8F + random.nextFloat() * 0.2F;
+        float volume = 0.04F;
 
         level.playLocalSound(
                 pos.getX() + 0.5,
                 pos.getY() + 0.5,
                 pos.getZ() + 0.5,
-                SoundEvents.WEATHER_RAIN,
-                SoundSource.WEATHER,
-                0.35F,
-                1.0F,
+                SoundEvents.WEATHER_RAIN_ABOVE,
+                SoundSource.BLOCKS,
+                volume,
+                pitch,
                 false
         );
     }
