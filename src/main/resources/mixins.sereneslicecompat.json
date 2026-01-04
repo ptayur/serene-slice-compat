@@ -3,9 +3,9 @@
   "package": "net.ptayur.sereneslicecompat.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins" : [
-    "SeasonsHookMixin",
+    "SeasonHooksMixin",
     "SprinklerTileMixin",
-    "BlockEntityAccessor"
+    "SprinklerTileBEAccessor"
   ],
   "refmap": "mixins.sereneslicecompat.refmap.json"
 }

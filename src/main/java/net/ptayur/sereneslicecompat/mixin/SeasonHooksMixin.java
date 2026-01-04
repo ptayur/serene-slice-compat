@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(sereneseasons.season.SeasonHooks.class)
-public abstract class SeasonsHookMixin {
+public abstract class SeasonHooksMixin {
 
     @Inject(method = "isRainingAtHook", at = @At("RETURN"), cancellable = true, remap = false)
     private static void isRainingAtHook(Level level, BlockPos pos, CallbackInfoReturnable<Boolean> callback) {

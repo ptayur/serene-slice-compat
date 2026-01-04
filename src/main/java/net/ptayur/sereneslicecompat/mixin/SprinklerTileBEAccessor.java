@@ -7,12 +7,12 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
 @Mixin(BlockEntity.class)
-public interface BlockEntityAccessor {
+public interface SprinklerTileBEAccessor {
 
     @Accessor("level")
-    Level sereneseasonscompat$getLevel();
+    Level getLevel();
 
     @Accessor("worldPosition")
-    BlockPos sereneseasonscompat$getPos();
+    BlockPos getPos();
 }
 
