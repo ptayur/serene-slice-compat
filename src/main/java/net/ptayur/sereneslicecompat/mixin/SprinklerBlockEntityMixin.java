@@ -1,6 +1,6 @@
 package net.ptayur.sereneslicecompat.mixin;
 
-import com.possible_triangle.sliceanddice.block.sprinkler.SprinklerTile;
+import com.possible_triangle.sliceanddice.block.sprinkler.SprinklerBlockEntity;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
@@ -14,8 +14,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 
-@Mixin(SprinklerTile.class)
-public abstract class SprinklerTileMixin {
+@Mixin(SprinklerBlockEntity.class)
+public abstract class SprinklerBlockEntityMixin {
 
     @Unique
     private static boolean sereneSliceCompat$warningAccessor = false;
@@ -26,13 +26,13 @@ public abstract class SprinklerTileMixin {
             method = "tick",
             at = @At(
                     value = "INVOKE",
-                    target = "Lcom/possible_triangle/sliceanddice/block/sprinkler/SprinklerTile;" +
-                             "spawnProcessingParticles(Lnet/minecraftforge/fluids/FluidStack;)V"
+                    target = "Lcom/possible_triangle/sliceanddice/block/sprinkler/SprinklerBlockEntity;" +
+                             "spawnProcessingParticles(Lnet/neoforged/neoforge/fluids/FluidStack;)V"
             ),
             remap = false
     )
     private void sereneSliceCompat$tick(CallbackInfo callback) {
-        if (!(this instanceof SprinklerTileBEAccessor sprinklerTileBEAccessor)) {
+        if (!(this instanceof SprinklerBlockEntityAccessor sprinklerBlockEntityAccessor)) {
             if (!sereneSliceCompat$warningAccessor) {
                 sereneSliceCompat$warningAccessor = true;
                 SereneSliceCompat.LOGGER.warn(
@@ -43,8 +43,8 @@ public abstract class SprinklerTileMixin {
             return;
         }
 
-        Level level = sprinklerTileBEAccessor.getLevel();
-        BlockPos pos = sprinklerTileBEAccessor.getPos();
+        Level level = sprinklerBlockEntityAccessor.getLevel();
+        BlockPos pos = sprinklerBlockEntityAccessor.getPos();
 
         if (!(level instanceof ClientLevel clientLevel)) {
             if (!sereneSliceCompat$warningClientLevel) {
