@@ -32,19 +32,19 @@ public abstract class SprinklerTileMixin {
             remap = false
     )
     private void sereneSliceCompat$tick(CallbackInfo callback) {
-        if (!(this instanceof SprinklerTileBEAccessor sprinklerTileBEAccessor)) {
+        if (!(this instanceof SprinklerTileAccessor sprinklerTileAccessor)) {
             if (!sereneSliceCompat$warningAccessor) {
                 sereneSliceCompat$warningAccessor = true;
                 SereneSliceCompat.LOGGER.warn(
-                        "SprinklerTileBEAccessor is not available in sereneSliceCompat$tick. " +
+                        "SprinklerTileAccessor is not available in sereneSliceCompat$tick. " +
                         "Sprinkler sound will not be played."
                 );
             }
             return;
         }
 
-        Level level = sprinklerTileBEAccessor.getLevel();
-        BlockPos pos = sprinklerTileBEAccessor.getPos();
+        Level level = sprinklerTileAccessor.getLevel();
+        BlockPos pos = sprinklerTileAccessor.getPos();
 
         if (!(level instanceof ClientLevel clientLevel)) {
             if (!sereneSliceCompat$warningClientLevel) {

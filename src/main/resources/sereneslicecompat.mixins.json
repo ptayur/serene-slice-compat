@@ -5,7 +5,7 @@
   "mixins" : [
     "SeasonHooksMixin",
     "SprinklerTileMixin",
-    "SprinklerTileBEAccessor"
+    "SprinklerTileAccessor"
   ],
-  "refmap": "mixins.sereneslicecompat.refmap.json"
+  "refmap": "sereneslicecompat.mixins.refmap.json"
 }
