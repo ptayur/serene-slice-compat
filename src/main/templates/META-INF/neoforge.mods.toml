@@ -30,10 +30,10 @@ version="${mod_version}" #mandatory
 displayName="${mod_name}" #mandatory
 
 # A URL to query for updates for this mod. See the JSON update specification https://docs.neoforged.net/docs/misc/updatechecker/
-#updateJSONURL="https://change.me.example.invalid/updates.json" #optional
+updateJSONURL="https://api.modrinth.com/updates/serene-slice-compat/forge_updates.json?neoforge=only" #optional
 
 # A URL for the "homepage" for this mod, displayed in the mod UI
-#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
+displayURL="https://github.com/ptayur/serene-slice-compat" #optional
 
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="assets/${mod_id}/icon.png" #optional
@@ -42,16 +42,16 @@ logoFile="assets/${mod_id}/icon.png" #optional
 #credits="" #optional
 
 # The authors of the mod, displayed in the mod UI (optional)
-#authors=""
+authors="ptayur"
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-A small compatibility mod that restores correct sprinkler functionality when Create Slice & Dice is used together with Serene Seasons.
+A small compatibility mod that restores proper sprinkler behavior when Create Slice & Dice is used together with Serene Seasons.
 '''
 
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
 [[mixins]]
-    config="mixins.${mod_id}.json"
+    config="${mod_id}.mixins.json"
 
 # The [[accessTransformers]] block allows you to declare where your AT file is.
 # If this block is omitted, a fallback attempt will be made to load an AT from META-INF/accesstransformer.cfg
@@ -91,14 +91,14 @@ A small compatibility mod that restores correct sprinkler functionality when Cre
 [[dependencies.${mod_id}]]
     modId="sereneseasons"
     mandatory=true
-    versionRange="[9,)"
+    versionRange="[10,)"
     ordering="AFTER"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
     modId="sliceanddice"
     mandatory=true
-    versionRange="[3,)"
+    versionRange="[4,)"
     ordering="AFTER"
     side="BOTH"
 

@@ -1,11 +1,10 @@
 {
   "required": true,
   "package": "net.ptayur.sereneslicecompat.mixin",
-  "compatibilityLevel": "JAVA_17",
+  "compatibilityLevel": "JAVA_21",
   "mixins" : [
     "SeasonHooksMixin",
     "SprinklerBlockEntityMixin",
     "SprinklerBlockEntityAccessor"
-  ],
-  "refmap": "mixins.sereneslicecompat.refmap.json"
+  ]
 }
