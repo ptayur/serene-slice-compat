@@ -1,7 +1,6 @@
 package net.ptayur.sereneslicecompat.mixin;
 
 import com.possible_triangle.sliceanddice.block.sprinkler.SprinklerTile;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -19,8 +18,6 @@ public abstract class SprinklerTileMixin {
 
     @Unique
     private static boolean sereneSliceCompat$warningAccessor = false;
-    @Unique
-    private static boolean sereneSliceCompat$warningClientLevel = false;
 
     @Inject(
             method = "tick",
@@ -44,23 +41,14 @@ public abstract class SprinklerTileMixin {
         }
 
         Level level = sprinklerTileAccessor.getLevel();
+
+        if (level == null || !level.isClientSide) return;
+
         BlockPos pos = sprinklerTileAccessor.getPos();
-
-        if (!(level instanceof ClientLevel clientLevel)) {
-            if (!sereneSliceCompat$warningClientLevel) {
-                sereneSliceCompat$warningClientLevel = true;
-                SereneSliceCompat.LOGGER.warn(
-                        "Level in sereneSliceCompat$tick is not a ClientLevel. " +
-                        "Sprinkler sound will not be played."
-                );
-            }
-            return;
-        }
-
-        float pitch = 0.8F + clientLevel.random.nextFloat() * 0.2F;
+        float pitch = 0.8F + level.getRandom().nextFloat() * 0.2F;
         float volume = 0.02F;
 
-        clientLevel.playLocalSound(
+        level.playLocalSound(
                 pos.getX() + 0.5,
                 pos.getY() + 0.5,
                 pos.getZ() + 0.5,
