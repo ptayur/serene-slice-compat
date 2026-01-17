@@ -1,27 +1,18 @@
-<p align="center">
+<div align="center">
   <img src="https://raw.githubusercontent.com/ptayur/serene-slice-compat/forge_1.20.1/src/main/resources/assets/sereneslicecompat/icon.png" alt="Logo" width="128">
-</p>
-<h1 align="center">Serene & Slice Compat</h1>
+  <h1 align="center">Serene & Slice Compat</h1>
+  <a href="https://www.curseforge.com/minecraft/mc-mods/serene-slice-compat/files"><img src="https://cf.way2muchnoise.eu/versions/1420698.svg" alt="Supported Versions" align="center"></a>
+  <a href="https://www.curseforge.com/minecraft/mc-mods/serene-slice-compat"><img src="https://cf.way2muchnoise.eu/full_1420698_downloads.svg" alt="CurseForge" align="center"></a>
+  <a href="https://modrinth.com/mod/serene-slice-compat"><img src="https://img.shields.io/modrinth/dt/OdyyFUwv?logo=modrinth&label=&labelColor=%2300AF5C&color=2D2D2D&logoColor=1C1C1C" alt="Modrinth" align="center"></a>
+  <br>
+  <a>Fixes irrigation logic and restores sprinkler sound</a>
+</div>
 
----
-
-<p align="center">
-  <a href="https://www.curseforge.com/minecraft/mc-mods/serene-slice-compat/files">
-    <img src="https://cf.way2muchnoise.eu/versions/1420698.svg" alt="Supported Versions">
-  </a>
-  <a href="https://www.curseforge.com/minecraft/mc-mods/serene-slice-compat">
-    <img src="https://cf.way2muchnoise.eu/full_1420698_downloads.svg" alt="CurseForge">
-  </a>
-  <a href="https://modrinth.com/mod/serene-slice-compat">
-    <img src="https://img.shields.io/modrinth/dt/OdyyFUwv?logo=modrinth&label=&labelColor=%2300AF5C&color=2D2D2D&logoColor=1C1C1C" alt="Modrinth">
-  </a>
-</p>
+## Info
 
 A small compatibility mod that restores proper sprinkler behavior when
 [Create: Slice & Dice](https://github.com/PssbleTrngle/SliceAndDice) is used together with
 [Serene Seasons](https://github.com/Glitchfiend/SereneSeasons).
-
----
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ptayur/serene-slice-compat/forge_1.20.1/screenshots/serene_slice_compat_showcase.gif" alt="Showcase" width="720">
