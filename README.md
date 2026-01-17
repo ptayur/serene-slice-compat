@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ptayur/serene-slice-compat/forge-1.20.1/src/main/resources/assets/sereneslicesompat/icon.png" alt="Logo" width="128">
+  <img src="https://github.com/ptayur/serene-slice-compat/blob/forge-1.20.1/src/main/resources/assets/sereneslicesompat/icon.png" alt="Logo" width="128">
 </p>
 <h1 align="center">Serene & Slice Compat</h1>
 
@@ -24,11 +24,7 @@ A small compatibility mod that restores proper sprinkler behavior when
 ---
 
 <p align="center">
-  <img
-    src="https://raw.githubusercontent.com/ptayur/serene-slice-compat/forge-1.20.1/screenshots/serene_slice_compat_showcase.gif"
-    alt="Showcase"
-    width="720"
-  >
+  <img src="https://github.com/ptayur/serene-slice-compat/blob/forge-1.20.1/screenshots/serene_slice_compat_showcase.gif" alt="Showcase" width="720">
 </p>
 
 <details>
