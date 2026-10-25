@@ -11,7 +11,7 @@
 ## Info
 
 A small compatibility mod that restores proper sprinkler behavior when
-[Create: Slice & Dice](https://github.com/PssbleTrngle/SliceAndDice) is used together with
+[Create Slice & Dice](https://github.com/PssbleTrngle/SliceAndDice) is used together with
 [Serene Seasons](https://github.com/Glitchfiend/SereneSeasons).
 
 <p align="center">
@@ -29,10 +29,10 @@ A small compatibility mod that restores proper sprinkler behavior when
   preventing later injections from running.
 
   In this case, Serene Seasons’ mixin configuration is resolved earlier, so its injection is applied first and cancels 
-  the method. As a result, Create: Slice & Dice’s injection never executes.
+  the method. As a result, Create Slice & Dice’s injection never executes.
 
 
-- Because Create: Slice & Dice relies on Minecraft’s vanilla weather system to trigger rain-related sound effects, 
+- Because Create Slice & Dice relies on Minecraft’s vanilla weather system to trigger rain-related sound effects, 
   overriding the vanilla weather logic in Serene Seasons prevents the sprinkler from playing its intended rain sounds.
 
 </details>
@@ -41,7 +41,7 @@ A small compatibility mod that restores proper sprinkler behavior when
 <summary><strong>How this mod fixes the issues</strong></summary>
 
 - Instead of injecting directly into Minecraft’s `isRainingAt()` method, this compatibility mod integrates the
-  Create: Slice & Dice sprinkler check into Serene Seasons’ `isRainingAtHook()`, ensuring both mods’ logic is evaluated
+  Create Slice & Dice sprinkler check into Serene Seasons’ `isRainingAtHook()`, ensuring both mods’ logic is evaluated
   consistently.
 
 
