@@ -98,7 +98,7 @@ A small compatibility mod that restores proper sprinkler behavior when Create Sl
 [[dependencies.${mod_id}]]
     modId="sliceanddice"
     mandatory=true
-    versionRange="[4,)"
+    versionRange="[4.3.0,)"
     ordering="AFTER"
     side="BOTH"
 
